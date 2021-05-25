@@ -24,7 +24,8 @@ class Report extends Base  {
                 {"type": "references", "target": "campaign", "x_embed": "object_refs"},
                 {"type": "references", "target": "course-of-action", "x_embed": "object_refs"},
                 {"type": "references", "target": "tool", "x_embed": "object_refs"},
-                {"type": "created-by", "target": "identity", "x_exclusive": true, "x_embed": "created_by_ref"}
+                {"type": "created-by", "target": "identity", "x_exclusive": true, "x_embed": "created_by_ref"},
+                {"type": "references", "target": "vulnerability", "x_embed": "object_refs"},
             ]
         }
 
