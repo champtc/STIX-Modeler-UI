@@ -2,18 +2,18 @@ import axios from 'axios';
 
 class Proxy {
     constructor() {
-        this.url = process.env.URL;
-        this.endpoint = process.env.ENDPOINT;
+        this.apiRoot = process.env.API_ROOT;
+        this.port = process.env.PORT;
     }
 
     async submit(bundle) {
         console.log('Submitting:')
         console.log(bundle);
-        console.log(`https://${this.url}${this.endpoint}`)
+        console.log(`https://${this.apiRoot}${this.port}`)
 
         const response = await axios({
             method: 'post',
-            url: `https://${this.url}${this.endpoint}`,
+            url: `https://${this.apiRoot}${this.port}`,
             data: { bundle },
             headers: { 'Content-Type': 'application/vnd.dl.tipping.submission+json;version=1' }
         });
