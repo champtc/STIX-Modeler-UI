@@ -1,11 +1,45 @@
+import axios from 'axios';
+
 class Proxy {
-    constructor() {
+  constructor() {
+    this.apiRoot = process.env.API_ROOT;
+    this.port = process.env.PORT;
+    this.endpoint = process.env.ENDPOINT;
+    this.apikey = process.env.API_KEY;
+    this.contentType = process.env.CONTENT_TYPE;
+    if (!this.validateEnvironmentVariables([this.apiRoot, this.contentType])) {
+      throw 'Missing env vars: either API_ROOT or CONTENT_TYPE';
+    }
+    this.compiledUrl = `${this.apiRoot}${this.port ? ':' + this.port : ''}${
+      this.endpoint
+        ? this.endpoint.startsWith('/')
+          ? this.endpoint
+          : '/' + this.endpoint
+        : ''
+    }`;
+  }
 
+  async submit(bundle) {
+    console.log('Submitting:');
+    console.log(bundle);
+    console.log(this.compiledUrl);
+    let compiledHeaders = { 'Content-Type': this.contentType };
+    if (this.apikey) {
+      compiledHeaders['Api-Key'] = this.apikey;
     }
 
-    submit(bundle) {
-        console.log(bundle);
-    }
+    const response = await axios({
+      method: 'post',
+      url: this.compiledUrl,
+      data: { bundle },
+      headers: compiledHeaders
+    });
+    console.log(`Received code: ${response.status}`);
+  }
+
+  validateEnvironmentVariables(environmentVariables) {
+    return environmentVariables.every(variable => variable) ? true : false;
+  }
 }
 
 export default new Proxy();

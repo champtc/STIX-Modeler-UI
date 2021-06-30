@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-
+const Dotenv = require('dotenv-webpack');
 const commonPaths = require('./paths');
 
 module.exports = {
@@ -46,6 +46,7 @@ module.exports = {
     hot: true
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new Dotenv()
   ]
 };
