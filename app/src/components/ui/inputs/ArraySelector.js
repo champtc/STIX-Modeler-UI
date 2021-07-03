@@ -19,6 +19,7 @@ export default class ArraySelector extends React.Component {
     }
 
     onClickHandler(field, value) {
+        debugger;
         this.props.onClickHandler(field, value);
     }
 
@@ -32,6 +33,7 @@ export default class ArraySelector extends React.Component {
             "array-container-item": true
         });
 
+
         return (
             <div className="array-container">
                 <div className="array-container-header">
@@ -39,6 +41,7 @@ export default class ArraySelector extends React.Component {
                 </div>
                 <div className="array-container-body">
                     {
+                        
                         items.map((item, i) => {
                             if (value.indexOf(item) > -1) {
                                 cls = classNames({

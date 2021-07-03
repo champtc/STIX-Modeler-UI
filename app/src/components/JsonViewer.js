@@ -38,7 +38,7 @@ export default class JsonViewer extends React.Component {
       console.log(' OBJ: ', obj);
       let bundleObj = {};
       Object.entries(obj).map(([key, value]) => (Date.parse(value)) ?
-      bundleObj[key] = (new Date(value).getUTCMilliseconds()) ? new Date(value).toISOString() : new Date(value).toISOString().split('.')[0]+"Z" 
+      bundleObj[key] = new Date(value).toISOString() 
         : bundleObj[key] = value);
       return bundleObj;
     })

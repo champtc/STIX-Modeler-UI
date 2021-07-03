@@ -95,6 +95,7 @@ export default class Details extends React.Component {
                         </div>
                         break;
                     case "array":
+                        debugger;
                         control = <ArraySelector vocab={props[prop].vocab}
                                         key={prop}
                                         field={prop}
@@ -167,6 +168,7 @@ export default class Details extends React.Component {
                                     onClickDeletePropertyHandler={this.props.onClickDeletePropertyHandler} />
                     break;
                 case "stringselector":
+                    debugger;
                     control = <ArraySelector vocab={props[prop].vocab}
                                     key={prop}
                                     field={prop}

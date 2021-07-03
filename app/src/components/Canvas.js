@@ -177,6 +177,7 @@ export default class Canvas extends React.Component {
   }
 
   onChangeNodeHandler(event) {
+    debugger;
     this.store.editNodeValues(event);
   }
 

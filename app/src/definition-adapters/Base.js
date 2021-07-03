@@ -105,11 +105,11 @@ export class Base {
       }
       // Set default blank values based on the prop
       // type.
-      if (!process.env.REACT_APP_STIX_COMPLIANT) {
+ //     if (!process.env.REACT_APP_STIX_COMPLIANT) {
         if (mergedProps[prop].type) {
           mergedProps[prop].value = defaultValue(mergedProps[prop].type);
         }
-      }
+   //   }
     }
 
     console.log('Merge Props: ', mergedProps);
