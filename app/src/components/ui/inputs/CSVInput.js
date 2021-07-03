@@ -24,8 +24,9 @@ export default class ArraySelector extends React.Component {
     }
 
     render() {
+        debugger;
 
-        const value = this.props.value.join();
+        const value = this.props.value && this.props.value.join() || '';
 
         return (
             <Text name={this.props.name}

@@ -26,13 +26,15 @@ export default class ArraySelector extends React.Component {
     render() {
         const items = this.props.vocab ? this.props.vocab : [];
         const field = this.props.field;
-        const value = this.props.value;
+        const value = this.props.value || '';
         const description = this.props.description;
 
         let cls = classNames({
             "array-container-item": true
         });
 
+
+        debugger;
 
         return (
             <div className="array-container">
@@ -53,7 +55,7 @@ export default class ArraySelector extends React.Component {
                                     "array-container-item": true
                                 });
                             }
-                            return <div className={cls} key={i} onClick={() => this.onClickHandler(field, item)}>{item}</div>
+                            return <div className={cls} key={i} onClick={() => true /*this.onClickHandler(field, item)*/}>{item}</div>
                         })
                     }
                 </div>
