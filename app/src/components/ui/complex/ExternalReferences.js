@@ -49,7 +49,7 @@ export default class ExternalReferences extends React.Component {
         const value = this.props.value;
         const description = this.props.description;
 
-        const len = value.len;
+        const len = value && value.len;
 
         return (
             <div className="er-container">
@@ -61,7 +61,7 @@ export default class ExternalReferences extends React.Component {
                 </div>
                 <div className="er-body">
                     {
-                        value.map((p, i) => {
+                        value && value.map((p, i) => {
                             return (
                                 <ReferenceBlock key={i}
                                     i={i}

@@ -1029,7 +1029,8 @@ export default class App {
               if (!Object.keys(o[key]).length) {
                 delete o[key];
               }
-            } else {
+            } 
+            else {
               if (o[key] && !o[key].length) {
                 delete o[key];
               }

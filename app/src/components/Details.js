@@ -60,6 +60,7 @@ export default class Details extends React.Component {
 
         for (let prop in props) {
 
+
             let header = <div className="item-header">{prop}
                     <span data-tip={props[prop].description} className="material-icons">info</span>
                     <Tooltip />
