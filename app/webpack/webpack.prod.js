@@ -82,7 +82,7 @@ module.exports = {
       filename: `${commonPaths.cssFolder}/[name].css`,
       chunkFilename: `${commonPaths.cssFolder}/[name].css`,
     }),
-    new webpack.EnvironmentPlugin(['API_KEY', 'ENDPOINT', 'API_ROOT', 'CONTENT_TYPE'])
+    new webpack.EnvironmentPlugin(['API_KEY', 'ENDPOINT', 'PORT', 'API_ROOT', 'CONTENT_TYPE'])
   ],
   devtool: 'source-map',
 };
