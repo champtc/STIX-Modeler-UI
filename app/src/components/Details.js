@@ -60,6 +60,7 @@ export default class Details extends React.Component {
 
         for (let prop in props) {
 
+
             let header = <div className="item-header">{prop}
                     <span data-tip={props[prop].description} className="material-icons">info</span>
                     <Tooltip />
@@ -95,6 +96,7 @@ export default class Details extends React.Component {
                         </div>
                         break;
                     case "array":
+                        debugger;
                         control = <ArraySelector vocab={props[prop].vocab}
                                         key={prop}
                                         field={prop}
@@ -167,6 +169,7 @@ export default class Details extends React.Component {
                                     onClickDeletePropertyHandler={this.props.onClickDeletePropertyHandler} />
                     break;
                 case "stringselector":
+                    debugger;
                     control = <ArraySelector vocab={props[prop].vocab}
                                     key={prop}
                                     field={prop}
