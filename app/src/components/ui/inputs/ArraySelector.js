@@ -19,7 +19,6 @@ export default class ArraySelector extends React.Component {
     }
 
     onClickHandler(field, value) {
-        debugger;
         this.props.onClickHandler(field, value);
     }
 
@@ -33,8 +32,6 @@ export default class ArraySelector extends React.Component {
             "array-container-item": true
         });
 
-
-        debugger;
 
         return (
             <div className="array-container">

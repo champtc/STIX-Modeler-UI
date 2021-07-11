@@ -67,10 +67,10 @@ export default class KillChain extends React.Component {
     render() {
         const vocab = this.props.vocab ? this.props.vocab : [];
         const field = this.props.field;
-        const value = this.props.value;
+        const value = this.props && this.props.value;
         const description = this.props.description;
 
-        const len = value.len;
+        const len = value && value.len;
         const kcName = `kc-name-${this.props.node.id}`;
         const phaseName = `phase-${this.props.node.id}`;
 
@@ -84,7 +84,7 @@ export default class KillChain extends React.Component {
                         <select id={kcName} onChange={this.populatePhase}>
                             <option value={0}> -- Select Kill Chain -- </option>
                             {
-                                vocab.map(item => {
+                                vocab && vocab.map(item => {
                                     return <option key={item.value}
                                         value={item.value}>{item.label}</option>
                                 })
@@ -97,7 +97,7 @@ export default class KillChain extends React.Component {
                     </div>
 
                     {
-                        value.map((p, i) => {
+                        value && value.map((p, i) => {
                             return (
                                 <div key={i} className="kill-chain-row">
                                     <div>{p.kill_chain_name} - {p.phase_name} <span onClick={() => this.props.onClickRemoveHandler(field, p)} className="material-icons">highlight_off</span></div>

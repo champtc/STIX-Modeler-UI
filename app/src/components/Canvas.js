@@ -112,7 +112,6 @@ export default class Canvas extends React.Component {
   }
 
   onClickShowGrowlHandler(message) {
-    debugger;
     this.store.growlMessage = message;
     this.store.showGrowl = true;
   }
@@ -177,7 +176,6 @@ export default class Canvas extends React.Component {
   }
 
   onChangeNodeHandler(event) {
-    debugger;
     this.store.editNodeValues(event);
   }
 
