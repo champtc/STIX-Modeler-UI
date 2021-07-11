@@ -7,6 +7,13 @@ class Proxy {
     this.endpoint = process.env.ENDPOINT;
     this.apikey = process.env.API_KEY;
     this.contentType = process.env.CONTENT_TYPE;
+  
+  }
+
+  async submit(bundle) {
+    console.log('Submitting:');
+    console.log(bundle);
+
     if (!this.validateEnvironmentVariables([this.apiRoot, this.contentType])) {
       throw 'Missing env vars: either API_ROOT or CONTENT_TYPE';
     }
@@ -17,12 +24,6 @@ class Proxy {
           : '/' + this.endpoint
         : ''
     }`;
-  }
-
-  async submit(bundle) {
-    console.log('Submitting:');
-    console.log(bundle);
-    console.log(this.compiledUrl);
     let compiledHeaders = { 'Content-Type': this.contentType };
     if (this.apikey) {
       compiledHeaders['Api-Key'] = this.apikey;
