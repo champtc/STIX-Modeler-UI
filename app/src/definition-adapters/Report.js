@@ -26,6 +26,12 @@ class Report extends Base  {
                 {"type": "references", "target": "tool", "x_embed": "object_refs"},
                 {"type": "created-by", "target": "identity", "x_exclusive": true, "x_embed": "created_by_ref"},
                 {"type": "references", "target": "vulnerability", "x_embed": "object_refs"},
+                {"type": "references", "target": "infrastructure", "x_embed": "object_refs"},
+                {"type": "references", "target": "grouping", "x_embed": "object_refs"},
+                {"type": "references", "target": "location", "x_embed": "object_refs"},
+                {"type": "references", "target": "malware-analysis", "x_embed": "object_refs"},
+                {"type": "references", "target": "note", "x_embed": "object_refs"},
+                {"type": "references", "target": "opinion", "x_embed": "object_refs"},
             ]
         }
 
