@@ -52,7 +52,7 @@ export default class ArraySelector extends React.Component {
                                     "array-container-item": true
                                 });
                             }
-                            return <div className={cls} key={i} onClick={() => true /*this.onClickHandler(field, item)*/}>{item}</div>
+                            return <div className={cls} key={i} onClick={() => this.onClickHandler(field, item)}>{item}</div>
                         })
                     }
                 </div>
