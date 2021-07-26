@@ -432,6 +432,13 @@ deleteNodeLabel(value) {
     }
   }
 
+  removeLabelValueInBundle(value) {
+    const props = { id: this.selected.id, name: 'labels', value }
+    console.log('Props: ', props);
+
+    this.removeNodeArrayValuesInBundle(props);
+  }
+
   removeNodeArrayValuesInBundle(props) {
     let idx;
 

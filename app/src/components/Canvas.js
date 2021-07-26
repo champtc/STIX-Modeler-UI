@@ -181,6 +181,8 @@ export default class Canvas extends React.Component {
     this.store.editNodeValues(event);
   }
 
+  
+
   mutateOnEvent(property, value) {
     const event = {
       currentTarget: {
@@ -197,6 +199,7 @@ export default class Canvas extends React.Component {
   }
   onClickRemoveLabel(value) {
     this.store.deleteNodeLabel(value);
+    this.store.removeLabelValueInBundle(value);
   }
 
   onChangeDateHandler(property, datetime) {
