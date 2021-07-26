@@ -291,6 +291,17 @@ export default class App {
     });
   }
 
+addNodeLabel(value) {
+  let props = this.selected.properties;
+  props['labels'].vocab.push(value);
+};
+
+deleteNodeLabel(value) {
+  debugger;
+  this.selected.properties['labels'].vocab = this.selected.properties['labels'].vocab.filter((arrayValue) => arrayValue !== value);
+  
+}
+
   editNodeValues(event) {
     let props = this.selected.properties;
     let updateProps = {
@@ -298,6 +309,8 @@ export default class App {
       value: event.currentTarget.value,
       name: event.currentTarget.name
     };
+
+    debugger;
 
     // Array's clearly need different treatment than strings.
     if (props[updateProps.name].type === 'array') {

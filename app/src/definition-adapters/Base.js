@@ -112,7 +112,6 @@ export class Base {
    //   }
     }
 
-    console.log('Merge Props: ', mergedProps);
 
     if (mergedProps['type']) {
       mergedProps['type'].control = 'literal';

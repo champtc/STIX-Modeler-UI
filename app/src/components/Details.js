@@ -35,7 +35,7 @@ export default class Details extends React.Component {
 
         this.onChangeHandler = this.onChangeHandler.bind(this);
         this.onChangeDateHandler = this.onChangeDateHandler.bind(this);
-	}
+    }
 
     onChangeHandler(event) {
         this.props.onChangeNodeHandler(event);
@@ -61,10 +61,11 @@ export default class Details extends React.Component {
         for (let prop in props) {
 
 
+
             let header = <div className="item-header">{prop}
-                    <span data-tip={props[prop].description} className="material-icons">info</span>
-                    <Tooltip />
-                </div>
+                <span data-tip={props[prop].description} className="material-icons">info</span>
+                <Tooltip />
+            </div>
 
             let control = <div className="item" key={prop}>
                 {header}
@@ -97,11 +98,14 @@ export default class Details extends React.Component {
                         break;
                     case "array":
                         control = <ArraySelector vocab={props[prop].vocab}
-                                        key={prop}
-                                        field={prop}
-                                        value={props[prop].value}
-                                        description={props[prop].description}
-                                        onClickHandler={this.props.onClickArrayHandler} />
+                            key={prop}
+                            field={prop}
+                            value={props[prop].value}
+                            description={props[prop].description}
+                            onClickHandler={this.props.onClickArrayHandler}
+                            onClickAddLabel={this.props.onClickAddLabel}
+                            onClickRemoveLabel={this.props.onClickRemoveLabel}
+                        />
                         break;
                     case "boolean":
                         control = <div className="item" key={prop}>
@@ -141,39 +145,39 @@ export default class Details extends React.Component {
                         {header}
                         <div className="item-value">
                             <CSVInput key={prop}
-                                    name={prop}
-                                    value={props[prop].value}
-                                    onChangeHandler={this.props.onChangeCSVHandler} />
+                                name={prop}
+                                value={props[prop].value}
+                                onChangeHandler={this.props.onChangeCSVHandler} />
                         </div>
                     </div>
                     break;
                 case "killchain":
                     control = <KillChain vocab={props[prop].vocab}
-                                    node={node}
-                                    key={prop}
-                                    field={prop}
-                                    value={props[prop].value}
-                                    description={props[prop].description}
-                                    onChangeHandler={this.props.onChangePhaseHandler}
-                                    onClickRemoveHandler={this.props.onClickRemovePhaseHander} />
+                        node={node}
+                        key={prop}
+                        field={prop}
+                        value={props[prop].value}
+                        description={props[prop].description}
+                        onChangeHandler={this.props.onChangePhaseHandler}
+                        onClickRemoveHandler={this.props.onClickRemovePhaseHander} />
                     break;
                 case "externalrefs":
                     control = <ExternalReferences node={node}
-                                    key={prop}
-                                    field={prop}
-                                    value={props[prop].value}
-                                    description={props[prop].description}
-                                    onClickAddObjectHandler={this.props.onClickAddObjectHandler}
-                                    onChangeERHandler={this.props.onChangeERHandler}
-                                    onClickDeletePropertyHandler={this.props.onClickDeletePropertyHandler} />
+                        key={prop}
+                        field={prop}
+                        value={props[prop].value}
+                        description={props[prop].description}
+                        onClickAddObjectHandler={this.props.onClickAddObjectHandler}
+                        onChangeERHandler={this.props.onChangeERHandler}
+                        onClickDeletePropertyHandler={this.props.onClickDeletePropertyHandler} />
                     break;
                 case "stringselector":
                     control = <ArraySelector vocab={props[prop].vocab}
-                                    key={prop}
-                                    field={prop}
-                                    value={props[prop].value}
-                                    description={props[prop].description}
-                                    onClickHandler={this.props.onClickArrayHandler} />
+                        key={prop}
+                        field={prop}
+                        value={props[prop].value}
+                        description={props[prop].description}
+                        onClickHandler={this.props.onClickArrayHandler} />
                     break;
                 case "textarea":
                     control = <div className="item" key={prop}>
@@ -187,21 +191,21 @@ export default class Details extends React.Component {
                     break;
                 case "genericobject":
                     control = <GenericObject name={prop}
-                                value={props[prop].value}
-                                description={props[prop].description}
-                                key={uuid()}
-                                field={prop}
-                                onClickAddObjectHandler={this.props.onClickAddGenericObjectHandler}
-                                onClickDeleteObjectHandler={this.props.onClickDeleteGenericObjectHandler}
-                                onChangeHandler={this.props.onChangeGenericObjectHandler} />
+                        value={props[prop].value}
+                        description={props[prop].description}
+                        key={uuid()}
+                        field={prop}
+                        onClickAddObjectHandler={this.props.onClickAddGenericObjectHandler}
+                        onClickDeleteObjectHandler={this.props.onClickDeleteGenericObjectHandler}
+                        onChangeHandler={this.props.onChangeGenericObjectHandler} />
                     break;
                 case "confirmtextarea":
                     control = <ConfirmTextarea name={prop}
-                                value={props[prop].value}
-                                description={props[prop].description}
-                                key={uuid()}
-                                field={prop}
-                                onClickAddTextHandler={this.props.onClickAddTextHandler} />
+                        value={props[prop].value}
+                        description={props[prop].description}
+                        key={uuid()}
+                        field={prop}
+                        onClickAddTextHandler={this.props.onClickAddTextHandler} />
                     break;
 
             }

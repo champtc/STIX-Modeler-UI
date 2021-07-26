@@ -88,6 +88,8 @@ export default class Canvas extends React.Component {
     this.onClickHideSubmissionErrorHandler = this.onClickHideSubmissionErrorHandler.bind(
       this
     );
+    this.onClickAddLabel = this.onClickAddLabel.bind(this);
+    this.onClickRemoveLabel = this.onClickRemoveLabel.bind(this);
   }
 
   componentWillUnmount() {
@@ -188,6 +190,13 @@ export default class Canvas extends React.Component {
     };
 
     this.onChangeNodeHandler(event);
+  }
+
+  onClickAddLabel(value) {
+    this.store.addNodeLabel(value);
+  }
+  onClickRemoveLabel(value) {
+    this.store.deleteNodeLabel(value);
   }
 
   onChangeDateHandler(property, datetime) {
@@ -497,6 +506,8 @@ export default class Canvas extends React.Component {
           }
           onClickAddTextHandler={this.onClickAddTextHandler}
           onClickDeleteHandler={this.onClickDeleteHandler}
+          onClickAddLabel={this.onClickAddLabel}
+          onClickRemoveLabel={this.onClickRemoveLabel}
         />
 
         <JsonViewer
