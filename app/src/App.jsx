@@ -6,6 +6,8 @@ import {withRouter, Route, NavLink, useParams} from "react-router-dom";
 import LazyRoute from "lazy-route";
 
 import defaultStyle from "./app.scss";
+import 'notyf/notyf.min.css'; // for React, Vue and Svelte
+
 
 import Canvas from './components/Canvas';
 
