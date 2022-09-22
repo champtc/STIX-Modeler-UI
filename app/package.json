@@ -69,7 +69,7 @@
     "react-dom": "16.12.0",
     "react-hot-loader": "4.12.18",
     "react-router-dom": "^5.1.2",
-    "react-tooltip": "^4.2.6",
+    "react-tooltip": "^4.2.21",
     "rfx-core": "^1.6.2"
   },
   "resolutions": {
