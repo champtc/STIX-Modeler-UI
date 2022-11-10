@@ -31,7 +31,7 @@ class Proxy {
     const response = await axios({
       method: 'post',
       url: this.compiledUrl,
-      data: { bundle } ,
+      data: bundle,
       headers: compiledHeaders
     });
     console.log(`Received code: ${response.status}`);
