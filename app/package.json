@@ -54,7 +54,7 @@
     "axios": "^0.21.1",
     "babel-plugin-transform-react-pure-class-to-function": "1.0.1",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
-    "core-js": "3.6.1",
+    "core-js": "3.25.0",
     "deepmerge": "^4.2.2",
     "fs": "0.0.1-security",
     "lazy-route": "^1.0.7",
